@@ -1,5 +1,5 @@
 # ClonedPerson
-This project contains the ClonedPerson dataset and code described in our paper "[Cloning Outfits from Real-World Images to 3D Characters for Generalizable Person Re-Identification]()". 
+This is the official repository for the ClonedPerson project, which contains the ClonedPerson dataset and code described in our paper "[Cloning Outfits from Real-World Images to 3D Characters for Generalizable Person Re-Identification]()". 
 
 <p align="center"><img width=700 src="/img/irregular.png"></p>
 <p align="center">Fig. 1. Examples of 3D characters in ClonedPerson.</p>
@@ -78,7 +78,7 @@ The filenames are encoded as follows. Take "700000_s02_c00_f023389.jpg" as an ex
 
 By training person re-identification models on these synthesized person images, we demonstrate that the model trained on ClonedPerson has a better generalization performance, superior to that trained on other popular real-world and synthetic person re-identification datasets.. The experimental results are shown in the following tables.
 
-<p align="center"><img height=250 src="/img/experimental.png"> </p>
+<p align="center"><img width=1000 src="/img/experimental.png"> </p>
 
 
 ## Contacts
