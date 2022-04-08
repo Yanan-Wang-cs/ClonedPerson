@@ -1,5 +1,5 @@
 # ClonedPerson
-This is the official repository for the ClonedPerson project, which contains the ClonedPerson dataset and code described in our paper "[Cloning Outfits from Real-World Images to 3D Characters for Generalizable Person Re-Identification]()". 
+This is the official repository for the ClonedPerson project, which contains the ClonedPerson dataset and code described in our paper "[Cloning Outfits from Real-World Images to 3D Characters for Generalizable Person Re-Identification](https://arxiv.org/pdf/2204.02611.pdf)". 
 
 <p align="center"><img width=700 src="/img/irregular.png"></p>
 <p align="center">Fig. 1. Examples of 3D characters in ClonedPerson.</p>
@@ -86,3 +86,14 @@ By training person re-identification models on these synthesized person images, 
 Yanan Wang  
 Inception Institute of Artificial Intelligence (IIAI)  
 yanan.wang@inceptioniai.org
+
+## Citation
+
+```
+@article{Wang-2022-Clonedperson,
+  title={{Cloning Outfits from Real-World Images to 3D Characters for Generalizable Person Re-Identification}},
+  author={Yanan Wang, Xuezhi Liang and Shengcai Liao},
+   journal={IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2022}
+}
+```
