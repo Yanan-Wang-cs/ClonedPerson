@@ -1,6 +1,8 @@
 # Pipeline Guidance
 This is the guiding document for the project in "[Cloning Outfits from Real-World Images to 3D Characters for Generalizable Person Re-Identification](https://arxiv.org/pdf/2204.02611.pdf)". 
 
+<p align="center"><img width=700 src="../img/pipeline.png"></p>
+<p align="center">Fig. 1. The proposed ClonedPerson pipeline, which automatically creates similarly dressed 3D characters from person images.</p>
 
 ## Table of Contents
 
@@ -21,6 +23,7 @@ This is the guiding document for the project in "[Cloning Outfits from Real-Worl
 5. run the command: "sh demo.sh"
 
 ### Person view qualification by pose detection
+
 1. Prepare environment according to [MMPose](https://github.com/open-mmlab/mmpose/blob/master/docs/en/install.md).
 2. Download the model [hrnet_w48_coco_256x192-b9e0b3ab_20200708.pth](https://drive.google.com/file/d/1TpnPTXITd9q6Dz7xCDBvdgU7d-L55ndM/view?usp=sharing) and put it into the folder "2Pose/models"
 3. Put the images in folder (eg img) in the same directory as mmpose
@@ -28,6 +31,7 @@ This is the guiding document for the project in "[Cloning Outfits from Real-Worl
 5. run the command: "python demo.py"
 
 ### Clothes and keypoint detection
+
 1. Prepare environment according to [PIPNet](https://github.com/jhb86253817/PIPNet).
 2. Download the model [epoch_12.pth](https://drive.google.com/file/d/14V2olxULzVo5b7iUAip3t8UQqjvM8E6M/view?usp=sharing) and put it into the folder "3Clothes/mmdetection/deppFashion2_multigpu"
 3. Download the folder [snapshots](https://drive.google.com/drive/folders/17Qbkc0W3-0S_cMMkNvMWnWBEJ_tmJK8Y?usp=sharing) and put it into the folder "3Clothes/PIPNet_rmnb"
@@ -45,5 +49,11 @@ This is the guiding document for the project in "[Cloning Outfits from Real-Worl
 
 ## Generate 3D characters
 
-
+1. Download accessories (e.g., hair, beard, shoes, and skin) according to the "5characters/accessories/download.txt". In each link, download all files including *.mhclo, *.obj, *.mhmat, *.thumb, and *.png or *.jpg
+2. Download clothes according to the "5characters/models/download.txt", the data format is: "folderName, downloadLink". Put these folders under "models"
+3. If there are some clothes in step2 failed to download, delete the corresponding lines in "5characters/Resources/model.csv". The data format in model.csv: "folderName, clothType, pointsPosition, image corresponding point, UV map corresponding point, 50×50 block maximum mapping area, Pants area in full body suit"
+4. Put images and the label file in "5characters/Source/" as the example shows.
+5. Download the model [checkpoint.pth.tar](https://drive.google.com/file/d/1YH9k_xLRCfPv5EQcyLQWBE6xuUytk0Wa/view?usp=sharing) and put it into the folder "5characters/"
+6. run the command: "sh demo.sh"
+7. You could add accessories and clothes by downloading from the [community](http://www.makehumancommunity.org/content/user_contributed_assets.html).
 

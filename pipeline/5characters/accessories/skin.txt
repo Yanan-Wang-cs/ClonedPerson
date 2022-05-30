@@ -1,0 +1,2 @@
+skinMaterial skins/default.mhmat
+skinMaterial skins/young_african_male_genitals.mhmat
