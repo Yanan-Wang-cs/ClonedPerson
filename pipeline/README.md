@@ -11,6 +11,7 @@ This is the guiding document for the project in "[Cloning Outfits from Real-Worl
 - [Clothes and keypoint detection](#clothes-detection)
 - [Similarity-Diversity Expansion](#cluster)
 - [Generate 3D characters](#characters)
+- [Export 3D characters](#characters)
 - [Unity3D Simulation and Rendering](#rendering)
 - [Image cropping.](#cropping)
 
@@ -57,3 +58,12 @@ This is the guiding document for the project in "[Cloning Outfits from Real-Worl
 6. run the command: "sh demo.sh"
 7. You could add accessories and clothes by downloading from the [community](http://www.makehumancommunity.org/content/user_contributed_assets.html).
 
+### Export 3D characters
+
+1. Install MakeHuman.
+2. Put the accessories and generated characters in to MakeHuman's clothes folder. e.g., "~/Documents/makehuman/v1py3/data/clothes".
+3. Put skins in to MakeHuman's skin folder. e.g., "~/Documents/makehuman/v1py3/data/skins".
+4. Modify the characterPath (e.g., '/home/exp/Documents/makehuman/v1py3/models/') and character Id range in "6export/guiexport.py".
+5. Use "6export/guiexport.py" replace the file in "MakeHuman installation folder/makehuman/apps/gui/guiexport.py".
+6. Start MakeHuman and choose "Files" tab to load a character. Then, click the "Export" tab and choose "filmbox(fbx)". Finally, click "Export" button.
+7. Generated characters are saved in "Your characterPath/3D/" (e.g., '/home/exp/Documents/makehuman/v1py3/models/3D')
