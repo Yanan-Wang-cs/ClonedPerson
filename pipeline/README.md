@@ -67,3 +67,19 @@ This is the guiding document for the project in "[Cloning Outfits from Real-Worl
 5. Use "6export/guiexport.py" replace the file in "MakeHuman installation folder/makehuman/apps/gui/guiexport.py".
 6. Start MakeHuman and choose "Files" tab to load a character. Then, click the "Export" tab and choose "filmbox(fbx)". Finally, click "Export" button.
 7. Generated characters are saved in "Your characterPath/3D/" (e.g., '/home/exp/Documents/makehuman/v1py3/models/3D')
+
+### Unity3D Simulation and Rendering
+
+1. Download Unity3D and create an empty 3D project(e.g., Documents/UnityProject/).
+2. Put the generated characters (e.g., '/home/exp/Documents/makehuman/v1py3/models/3D') into "Documents/UnityProject/Assets/Resources/" and wating for load. If "fix now" showed, choose it.
+3. Select the characters in Resources (e.g., Resources/example/B630000-630002), then choose "Rig" tab and select "Humanoid" as Animation Type. After that, click "Apply" button.
+4. Install Unity Recorder: Select "Window -> Package Manager", and click "Advanced" to choose "Show preview packages", and install "Unity Recorder"
+5. Configure Unity Recorder: Window -> General -> Recorder -> Recorder Window
+6. Import Package: demo and start recording.
+
+### Crop dataset
+
+1. Move the recording result (e.g., Recordings1_scene99) to the folder "8crop/Data".
+2. Modify parameters in "8crop/crop.py", such as "framerate".
+3. run the command: "python crop.py"
+
