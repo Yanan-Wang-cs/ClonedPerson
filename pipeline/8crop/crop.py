@@ -2,6 +2,8 @@ import numpy as np
 import math
 import os
 import cv2
+import random
+from PIL import Image, ImageDraw, ImageFont
 
 # scene, camera, dealTime, 'Recordings'+dealTime+'_scene'+scene+'/camera'+camera+'.mp4'
 processList = [[99,0,1],[99,1,1]]
@@ -228,14 +230,26 @@ def cropDataset(videoFolder, scene, camera):
 
 def filterLastImagePerId(videoFolder, camera):
     imgFolder = videoFolder + '/images/camera' + str(camera)+'/'
+    cropPath = videoFolder + '/images/cropped/'
+
+    if not os.path.exists(cropPath):
+        os.makedirs(cropPath)
+
     files = os.listdir(imgFolder)
+    record = open(videoFolder + '/images/rand_cutinfo.txt', 'a+')
+
+    crop_rate = 0.3
+    side_rate = 0.3
+
     arr = []
     frame = []
     name = []
     startframe = []
     startname = []
+
     for file in files:
-        try:
+        if '.jpg' in file:
+            # delete the final images of each ID
             id = int(file.split('_')[0])
             frame_num = file.split('_')[3].replace('.jpg','').replace('f','')
             frame_num = int(frame_num)
@@ -253,8 +267,29 @@ def filterLastImagePerId(videoFolder, camera):
                 if frame_num < startframe[id_index]:
                     startframe[id_index] = frame_num
                     startname[id_index] = file
-        except:
-            print(file)
+
+            # random crop
+            img = Image.open(imgFolder + file)
+            W = img.width
+            H = img.height
+            random_index = random.randint(0, 2)
+            x1 = random.randint(0, int(side_rate * W))
+            x2 = W - random.randint(0, int(side_rate * W))
+            if random_index == 0:
+                x2 = W
+            elif random_index == 1:
+                x1 = 0
+            randomnum = random.randint(0, 100) / 100
+            if randomnum > crop_rate:
+                cropped = img.crop((x1, 0, x2, H))
+                record.write(file+','+str(x1)+',0,'+str(x2)+','+str(H)+'\n')
+                cropped.save(cropPath + file)
+            else:
+                y2 = H - random.randint(0, int(0.5 * H))
+                y1 = random.randint(0, int(0.1 * H))
+                cropped = img.crop((x1, y1, x2, y2))
+                record.write(file+','+str(x1)+','+str(y1)+','+str(x2)+','+str(y2)+'\n')
+                cropped.save(cropPath + file)
     for item in name:
         os.remove(imgFolder + item)
 
