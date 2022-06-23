@@ -17,36 +17,57 @@ This is the guiding document for the project in "[Cloning Outfits from Real-Worl
 
 ## Pedestrian detection
 
-1. Prepare environment according to [Pedestron](https://github.com/hasanirtiza/Pedestron/blob/master/INSTALL.md).
+1. run the command:
+`
+git clone https://github.com/Yanan-Wang-cs/ClonedPerson.git
+cd ClonedPerson/pipeline
+conda create -n clonedperson_1pede python=3.7
+conda activate clonedperson_1pede
+pip install -r 1Pedestron/pedestron.txt
+`
 2. Download the model [epoch_19.pth.stu](https://drive.google.com/file/d/1Cw9loOUBhLJ4HYcw298V3ozfxON3ZOFN/view?usp=sharing) and put it into the folder "1Pedestron/models_pretrained"
 3. Put the image to be detected into the folder of the root directory. (eg img).
 4. Modify demo.sh, the last two parameters are the test folder and the result folder respectively
-5. run the command: "sh demo.sh"
+5. run the command: "cd 1Pedestron && sh demo.sh && cd .."
 
 ### Person view qualification by pose detection
 
-1. Prepare environment according to [MMPose](https://github.com/open-mmlab/mmpose/blob/master/docs/en/install.md).
+1. run the command:
+`
+conda create -n clonedperson_2pose python=3.7
+conda activate clonedperson_2pose
+pip install -r 2Pose/pose.txt
+`
 2. Download the model [hrnet_w48_coco_256x192-b9e0b3ab_20200708.pth](https://drive.google.com/file/d/1TpnPTXITd9q6Dz7xCDBvdgU7d-L55ndM/view?usp=sharing) and put it into the folder "2Pose/models"
 3. Put the images in folder (eg img) in the same directory as mmpose
 4. Modify demo.py, update the "imgFolder", "resultFolder", and "pointsFile"
-5. run the command: "python demo.py"
+5. run the command: "cd 2Pose && python demo.py && cd .."
 
 ### Clothes and keypoint detection
 
-1. Prepare environment according to [PIPNet](https://github.com/jhb86253817/PIPNet).
+1. run the command:
+`
+conda create -n clonedperson_3clothes python=3.7
+conda activate clonedperson_3clothes
+pip install -r 3Clothes/clothes.txt
+`
 2. Download the model [epoch_12.pth](https://drive.google.com/file/d/14V2olxULzVo5b7iUAip3t8UQqjvM8E6M/view?usp=sharing) and put it into the folder "3Clothes/mmdetection/deppFashion2_multigpu"
 3. Download the folder [snapshots](https://drive.google.com/drive/folders/17Qbkc0W3-0S_cMMkNvMWnWBEJ_tmJK8Y?usp=sharing) and put it into the folder "3Clothes/PIPNet_rmnb"
 4. Put the images in folder (eg img) in the same directory as mmdetection
 5. Modify demo.py, update the "imgFolder", "resultFolder", and "pointsFile"
-6. run the command: "python demo.py"
+6. run the command: "cd 3Clothes && python demo.py && cd .."
 
 ### Similarity-Diversity Expansion
 
-1. Prepare environment according to [QAConv](https://github.com/ShengcaiLiao/QAConv).
+`
+conda create -n clonedperson_4cluster python=3.7
+conda activate clonedperson_4cluster
+pip install -r 4cluster/cluster.txt
+`
 2. Download the model [checkpoint.pth.tar](https://drive.google.com/file/d/1YH9k_xLRCfPv5EQcyLQWBE6xuUytk0Wa/view?usp=sharing) and put it into the folder "4cluster/QAConv"
 3. Put the images into the folder "4cluster/QAConv/Data/cluster/img"
 4. Modify demo.sh, update the "save_data_path" and "eps".
-5. run the command: "sh demo.sh"
+5. run the command: "cd 4cluster && sh demo.sh && cd .."
 
 ## Generate 3D characters
 
@@ -55,7 +76,7 @@ This is the guiding document for the project in "[Cloning Outfits from Real-Worl
 3. If there are some clothes in step2 failed to download, delete the corresponding lines in "5characters/Resources/model.csv". The data format in model.csv: "folderName, clothType, pointsPosition, image corresponding point, UV map corresponding point, 50×50 block maximum mapping area, Pants area in full body suit"
 4. Put images and the label file in "5characters/Source/" as the example shows.
 5. Download the model [checkpoint.pth.tar](https://drive.google.com/file/d/1YH9k_xLRCfPv5EQcyLQWBE6xuUytk0Wa/view?usp=sharing) and put it into the folder "5characters/"
-6. run the command: "sh demo.sh"
+6. run the command: "cd 5characters && sh demo.sh & cd .."
 7. You could add accessories and clothes by downloading from the [community](http://www.makehumancommunity.org/content/user_contributed_assets.html).
 
 ### Export 3D characters
@@ -81,5 +102,5 @@ This is the guiding document for the project in "[Cloning Outfits from Real-Worl
 
 1. Move the recording result (e.g., Recordings1_scene99) to the folder "8crop/Data".
 2. Modify parameters in "8crop/crop.py", such as "framerate".
-3. run the command: "python crop.py"
+3. run the command: "cd 8crop && python crop.py && .."
 
