@@ -19,10 +19,10 @@ This is the guiding document for the project in "[Cloning Outfits from Real-Worl
 
 1. run the command:
 `
-git clone https://github.com/Yanan-Wang-cs/ClonedPerson.git
-cd ClonedPerson/pipeline
-conda create -n clonedperson_1pede python=3.7
-conda activate clonedperson_1pede
+git clone https://github.com/Yanan-Wang-cs/ClonedPerson.git && 
+cd ClonedPerson/pipeline && 
+conda create -n clonedperson_1pede python=3.7 && 
+conda activate clonedperson_1pede && 
 pip install -r 1Pedestron/pedestron.txt
 `
 2. Download the model [epoch_19.pth.stu](https://drive.google.com/file/d/1Cw9loOUBhLJ4HYcw298V3ozfxON3ZOFN/view?usp=sharing) and put it into the folder "1Pedestron/models_pretrained"
@@ -34,8 +34,8 @@ pip install -r 1Pedestron/pedestron.txt
 
 1. run the command:
 `
-conda create -n clonedperson_2pose python=3.7
-conda activate clonedperson_2pose
+conda create -n clonedperson_2pose python=3.7 && 
+conda activate clonedperson_2pose && 
 pip install -r 2Pose/pose.txt
 `
 2. Download the model [hrnet_w48_coco_256x192-b9e0b3ab_20200708.pth](https://drive.google.com/file/d/1TpnPTXITd9q6Dz7xCDBvdgU7d-L55ndM/view?usp=sharing) and put it into the folder "2Pose/models"
@@ -47,8 +47,8 @@ pip install -r 2Pose/pose.txt
 
 1. run the command:
 `
-conda create -n clonedperson_3clothes python=3.7
-conda activate clonedperson_3clothes
+conda create -n clonedperson_3clothes python=3.7 && 
+conda activate clonedperson_3clothes && 
 pip install -r 3Clothes/clothes.txt
 `
 2. Download the model [epoch_12.pth](https://drive.google.com/file/d/14V2olxULzVo5b7iUAip3t8UQqjvM8E6M/view?usp=sharing) and put it into the folder "3Clothes/mmdetection/deppFashion2_multigpu"
@@ -60,8 +60,8 @@ pip install -r 3Clothes/clothes.txt
 ### Similarity-Diversity Expansion
 
 `
-conda create -n clonedperson_4cluster python=3.7
-conda activate clonedperson_4cluster
+conda create -n clonedperson_4cluster python=3.7 && 
+conda activate clonedperson_4cluster && 
 pip install -r 4cluster/cluster.txt
 `
 2. Download the model [checkpoint.pth.tar](https://drive.google.com/file/d/1YH9k_xLRCfPv5EQcyLQWBE6xuUytk0Wa/view?usp=sharing) and put it into the folder "4cluster/QAConv"
