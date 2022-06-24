@@ -1,4 +1,3 @@
-[![OSCS Status](https://www.oscs1024.com/platform/badge/Yanan-Wang-cs/ClonedPerson.svg?size=small)](https://www.oscs1024.com/project/Yanan-Wang-cs/ClonedPerson?ref=badge_small)
 # ClonedPerson
 This is the official repository for the ClonedPerson project, which contains the ClonedPerson dataset and code described in our paper "[Cloning Outfits from Real-World Images to 3D Characters for Generalizable Person Re-Identification](https://arxiv.org/pdf/2204.02611.pdf)". 
 
