@@ -6,9 +6,14 @@ This is the official repository for the ClonedPerson project, which contains the
 
 ## Table of Contents
 
-- [Dataset Description](#link-of-the-dataset)
+- [Pipeline Setup](#pipeline-setup)
+- [Dataset Description](#dataset-description)
 - [Experimental Results](#experimental-results)
 - [Contacts](#contacts)
+
+## Pipeline Setup
+
+Please see [here](https://github.com/Yanan-Wang-cs/ClonedPerson/tree/main/pipeline).
 
 ## Dataset Description
 
