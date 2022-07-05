@@ -83,7 +83,7 @@ The filenames are encoded as follows. Take "700000_s02_c00_f023389.jpg" as an ex
 
 By training person re-identification models on these synthesized person images, we demonstrate that the model trained on ClonedPerson has a better generalization performance, superior to that trained on other popular real-world and synthetic person re-identification datasets.. The experimental results are shown in the following tables.
 
-<p align="center"><img width=1000 src="/img/experiments.png"> </p>
+<p align="center"><img width=1000 src="/img/experimental.png"> </p>
 
 
 ## Contacts
