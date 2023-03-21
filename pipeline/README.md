@@ -15,7 +15,7 @@ This is the guiding document for the project in "[Cloning Outfits from Real-Worl
 - [Unity3D Simulation and Rendering](#rendering)
 - [Image cropping.](#cropping)
 
-## Pedestrian detection
+## [Pedestrian detection](https://github.com/hasanirtiza/Pedestron)
 
 1. run the command:
 `
@@ -29,6 +29,8 @@ pip install -r 1Pedestron/pedestron.txt
 3. Put the image to be detected into the folder of the root directory. (eg img).
 4. Modify demo.sh, the last two parameters are the test folder and the result folder respectively
 5. run the command: "cd 1Pedestron && sh demo.sh && cd .."
+
+For more details, please refer to https://github.com/hasanirtiza/Pedestron
 
 ### Person view qualification by pose detection
 
